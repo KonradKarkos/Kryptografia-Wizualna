@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kryptografia_Wizualna"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Kryptografia Wizualna" Height="450" Width="800" ResizeMode="CanMinimize">
     <Grid>
-        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="421" VerticalAlignment="Top" Width="794">
+            <TabItem Header="Wyniki i opcje">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="BKoduj" Content="Podziel obraz na udziały" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="395,363,0,0" IsEnabled="False" Click="BKoduj_Click"/>
+                    <Button x:Name="BHelp" Content="Pomoc" HorizontalAlignment="Left" Margin="703,10,0,0" VerticalAlignment="Top" Width="75" Click="BHelp_Click"/>
+                    <Button x:Name="BDekoduj" Content="Odczytaj obraz z udziałów" HorizontalAlignment="Left" Margin="596,363,0,0" VerticalAlignment="Top" Width="182" IsEnabled="False" Click="BDekoduj_Click"/>
+                    <TextBox x:Name="BoxKoncowy" HorizontalAlignment="Left" Height="19" Margin="395,339,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <Button x:Name="BKoncowy" Content="Zapisz obraz końcowy do pliku" HorizontalAlignment="Left" Margin="395,314,0,0" VerticalAlignment="Top" Width="383" IsEnabled="False" Click="BKoncowy_Click"/>
+                    <TextBox x:Name="BoxZapisUdzial2" HorizontalAlignment="Left" Height="19" Margin="395,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <Button x:Name="BZapisUdzial2" Content="Zapisz drugi udział do pliku" HorizontalAlignment="Left" Margin="395,167,0,0" VerticalAlignment="Top" Width="383" IsEnabled="False" Click="BZapisUdzial2_Click"/>
+                    <TextBox x:Name="BoxZapisUdzial1" HorizontalAlignment="Left" Height="19" Margin="395,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <Button x:Name="BZapisUdzial1" Content="Zapisz pierwszy udział do pliku" HorizontalAlignment="Left" Margin="395,118,0,0" VerticalAlignment="Top" Width="383" IsEnabled="False" Click="BZapisUdzial1_Click"/>
+                    <TextBox x:Name="BoxWczytUdzial2" HorizontalAlignment="Left" Height="19" Margin="395,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" TextChanged="BoxWczytUdzial2_TextChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+                    <TextBox x:Name="BoxWczytUdzial1" HorizontalAlignment="Left" Height="19" Margin="395,241,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" TextChanged="BoxWczytUdzial1_TextChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+                    <TextBox x:Name="BoxWczytPocz" HorizontalAlignment="Left" Height="19" Margin="395,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" TextChanged="BoxWczytPocz_TextChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+                    <Button x:Name="BWczytObraz" Content="Wczytaj obraz z pliku" HorizontalAlignment="Left" Margin="395,69,0,0" VerticalAlignment="Top" Width="383" Click="BWczytObraz_Click"/>
+                    <TextBox x:Name="BoxLogi" HorizontalAlignment="Left" Height="373" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" IsReadOnly="True"/>
+                    <Button x:Name="BWczytUdzial1" Content="Wczytaj pierwszy udział z pliku" HorizontalAlignment="Left" Margin="395,216,0,0" VerticalAlignment="Top" Width="383" Click="BWczytUdzial1_Click"/>
+                    <Button x:Name="BWybierzUdzial2" Content="Wczytaj drugi udział z pliku" HorizontalAlignment="Left" Margin="395,265,0,0" VerticalAlignment="Top" Width="383" Click="BWybierzUdzial2_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Udziały">
+                <Grid Background="#FFE5E5E5">
+                    <Image x:Name="ImageUdzial1" HorizontalAlignment="Left" Height="352" Margin="10,31,0,0" VerticalAlignment="Top" Width="338"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Udział 1" VerticalAlignment="Top"/>
+                    <Image x:Name="ImageUdzial2" HorizontalAlignment="Left" Height="352" Margin="440,31,0,0" VerticalAlignment="Top" Width="338"/>
+                    <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="440,10,0,0" TextWrapping="Wrap" Text="Udział 2" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Obraz szyfrowany i zdeszyfrowany">
+                <Grid Background="#FFE5E5E5">
+                    <Image x:Name="ImageSzyfrowany" HorizontalAlignment="Left" Height="352" Margin="10,31,0,0" VerticalAlignment="Top" Width="364"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Obraz szyfrowany" VerticalAlignment="Top"/>
+                    <Image x:Name="ImageZdeszyfrowany" HorizontalAlignment="Left" Height="352" Margin="414,31,0,0" VerticalAlignment="Top" Width="364"/>
+                    <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="414,10,0,0" TextWrapping="Wrap" Text="Obraz zdeszyfrowany" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
